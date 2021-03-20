@@ -30,3 +30,7 @@
 ## マーケット
 
 貧乏ゆすりを直したいと思っている人
+
+## 画面遷移図
+
+https://xd.adobe.com/view/f3f96cf7-4d7d-4e1f-a9a8-913b76ff5f95-a6aa/
