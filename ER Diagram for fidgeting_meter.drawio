@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-03-23T14:36:21.616Z" agent="5.0 (Macintosh; Intel Mac OS X 11_2_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36" etag="hJ5J_ZNoXulL7NGPl5gl" version="14.4.8" type="github">
+<mxfile host="app.diagrams.net" modified="2021-03-23T14:41:19.637Z" agent="5.0 (Macintosh; Intel Mac OS X 11_2_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36" etag="YXwTiD9dNe4sE3eMvg3O" version="14.4.8" type="github">
   <diagram id="KMcwc66zo0s1owtwAtsU" name="ページ1">
     <mxGraphModel dx="1207" dy="801" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
@@ -39,7 +39,7 @@
         <mxCell id="TI8mW6i3zvdnM-aCLv4K-21" value="fidget_level" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="TI8mW6i3zvdnM-aCLv4K-18">
           <mxGeometry y="56" width="160" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="TI8mW6i3zvdnM-aCLv4K-53" value="time" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="TI8mW6i3zvdnM-aCLv4K-18">
+        <mxCell id="TI8mW6i3zvdnM-aCLv4K-53" value="measured_time" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="TI8mW6i3zvdnM-aCLv4K-18">
           <mxGeometry y="86" width="160" height="30" as="geometry" />
         </mxCell>
         <mxCell id="TI8mW6i3zvdnM-aCLv4K-55" value="created_at" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="TI8mW6i3zvdnM-aCLv4K-18">
