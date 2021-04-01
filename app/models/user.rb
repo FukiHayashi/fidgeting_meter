@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  authenticates_with_sorcery!
   has_many :measured_fidgets, dependent: :destroy
   has_many :evaluation_fidgets, dependent: :destroy
   has_many :api_keys, dependent: :destroy
