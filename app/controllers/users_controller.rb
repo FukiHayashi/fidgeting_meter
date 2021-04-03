@@ -27,7 +27,6 @@ class UsersController < ApplicationController
   def edit; end
 
   def update
-
     if @user.update(update_user_params)
       redirect_to user_path(@user)
     else
@@ -42,7 +41,7 @@ class UsersController < ApplicationController
   end
 
   def update_user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation, setting_attributes: [:push_notification, :desktop_application_cooperation])
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, setting_attributes: %i[push_notification desktop_application_cooperation])
   end
 
   def set_user
