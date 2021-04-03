@@ -5,6 +5,7 @@ class User < ApplicationRecord
   has_many :api_keys, dependent: :destroy
 
   has_one :setting, dependent: :destroy
+  accepts_nested_attributes_for :setting
 
   validates :name, presence: true, length: { maximum: 50 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i.freeze
