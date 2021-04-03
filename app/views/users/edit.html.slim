@@ -24,3 +24,4 @@ p Find me in app/views/users/create.html.slim
         = form.label :desktop_application_cooperation
         = form.check_box :desktop_application_cooperation, class: "form-control", id: "user_setting_desktop_application_cooperation"
   = form.submit "registration", class: "btn btn-primary"
+= link_to "delete", user_path(@user), method: :delete, class: "btn btn-danger"
