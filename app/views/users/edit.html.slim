@@ -19,9 +19,9 @@ p Find me in app/views/users/create.html.slim
     = form.fields_for :setting do |s|
       .user-setting
         = s.label :push_notification
-        = s.check_box :push_notification, class: "form-control", id: "user_setting_push_notification"
+        = s.check_box :push_notification, class: "form-control", id: "setting_push_notification"
       .user-setting
-        = form.label :desktop_application_cooperation
-        = form.check_box :desktop_application_cooperation, class: "form-control", id: "user_setting_desktop_application_cooperation"
+        = s.label :desktop_application_cooperation
+        = s.check_box :desktop_application_cooperation, class: "form-control", id: "setting_desktop_application_cooperation"
   = form.submit "registration", class: "btn btn-primary"
 = link_to "delete", user_path(@user), method: :delete, class: "btn btn-danger"

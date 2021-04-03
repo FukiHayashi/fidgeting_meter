@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :setting do
-    user { nil }
+    user
     push_notification { false }
     desktop_application_cooperation { false }
   end
