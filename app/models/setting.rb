@@ -1,5 +1,5 @@
 class Setting < ApplicationRecord
   belongs_to :user
-  validates :push_notification, presence: true
-  validates :desktop_application_cooperation, presence: true
+  validates :push_notification, inclusion: [true, false]
+  validates :desktop_application_cooperation, inclusion: [true, false]
 end
