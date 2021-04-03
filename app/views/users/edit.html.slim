@@ -1,0 +1,27 @@
+h1 Users#edit
+p Find me in app/views/users/create.html.slim
+
+= form_with(model: @user, local: true) do |form|
+  = render 'shared/error_messages', model: form.object
+  .form-group
+    = form.label :name
+    = form.text_field :name, class: "form-control", type: "text", id: "user_name", autofocus: true
+  .form-group
+    = form.label :email
+    = form.text_field :email, class: "form-control", type: "email", id: "user_email"
+  .form-group
+    = form.label :password
+    = form.text_field :password, class: "form-control", type: "password", id: "user_password"
+  .form-group
+    = form.label :password_confirmation
+    = form.text_field :password_confirmation, class: "form-control", type: "password", id: "user_password_confirmation"
+  .form-gourp
+    = form.fields_for :setting do |s|
+      .user-setting
+        = s.label :push_notification
+        = s.check_box :push_notification, class: "form-control", id: "setting_push_notification"
+      .user-setting
+        = s.label :desktop_application_cooperation
+        = s.check_box :desktop_application_cooperation, class: "form-control", id: "setting_desktop_application_cooperation"
+  = form.submit "registration", class: "btn btn-primary"
+= link_to "delete", user_path(@user), method: :delete, class: "btn btn-danger"

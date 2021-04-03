@@ -1,0 +1,13 @@
+h1 Users#show
+p Find me in app/views/users/show.html.slim
+
+.row
+  .col-md-10.offset-md-1.col-lg-8.offset-lg-2
+    p
+      = @user.name
+    p
+      = @user.email
+    p
+      = @user.setting.push_notification
+    p
+      = @user.setting.desktop_application_cooperation
