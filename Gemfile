@@ -59,5 +59,11 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+# use sorcery
 gem 'sorcery'
+
+# use slim format to views
 gem 'slim-rails'
+
+# json sirialiser
+gem 'fast_jsonapi'
