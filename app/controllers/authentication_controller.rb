@@ -14,7 +14,7 @@ class AuthenticationController < ApplicationController
     end
   end
 
-  def destory
+  def destroy
     logout
     redirect_to new_user_path
   end

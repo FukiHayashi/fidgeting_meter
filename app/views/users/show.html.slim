@@ -11,3 +11,4 @@ p Find me in app/views/users/show.html.slim
       = @user.setting.push_notification
     p
       = @user.setting.desktop_application_cooperation
+    = link_to "logout", logout_path, method: :delete, class: "btn btn-danger"
