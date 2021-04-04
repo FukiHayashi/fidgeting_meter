@@ -71,3 +71,6 @@ Style/WhileUntilModifier:
 
 Bundler/OrderedGems:
   Enabled: false
+
+Naming/MemoizedInstanceVariableName:
+  Enabled: false

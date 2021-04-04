@@ -2,24 +2,24 @@ module Api::ExceptionHandler
   extend ActiveSupport::Concern
 
   included do
-    rescue_from Exception, with: :render_500
-    rescue_from StandardError, with: :render_500
-    rescue_from ActionController::BadRequest, with: :render_400
-    rescue_from ActiveRecord::RecordNotFound, with: :render_404
-    rescue_from ActionController::RoutingError, with: :render_404
+    rescue_from Exception, with: :render_internal_server_error
+    rescue_from StandardError, with: :render_internal_server_error
+    rescue_from ActionController::BadRequest, with: :render_bad_request
+    rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
+    rescue_from ActionController::RoutingError, with: :render_not_found
   end
 
   private
 
-  def render_400(exception = nil, messages = nil)
+  def render_bad_request(exception = nil, messages = nil)
     render_error(400, 'Bad Request', exception&.message, *messages)
   end
 
-  def render_404(exception = nil, messages = nil)
+  def render_not_found(exception = nil, messages = nil)
     render_error(404, 'Record Not Found', exception&.message, *messages)
   end
 
-  def render_500(exception = nil, messages = nil)
+  def render_internal_server_error(exception = nil, messages = nil)
     render_error(500, 'Internal Server Error', exception&.message, *messages)
   end
 
