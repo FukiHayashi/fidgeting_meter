@@ -1,7 +1,7 @@
 class ApiKey < ApplicationRecord
   belongs_to :user
 
-  validates :access_token, presence: true, uniqueness: true
+  validates :access_token, presence: true, uniqueness: { case_sensitive: false }
 
   scope :active, -> { where('expires_at >= ?', Time.current) }
 
