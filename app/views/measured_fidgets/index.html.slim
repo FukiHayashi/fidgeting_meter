@@ -1,0 +1,12 @@
+h1 MeasuredFidgets#index
+p Find me in app/views/measured_fidgets/index.html.slim
+
+.mb-3
+  table.table.table-hover
+    thead.thead-default
+      tr
+        th = "detected_at"
+        th = "fidget_level"
+        th = "measured_time"
+    tbody
+      = render 'measured_fidgets', measured_fidgets: @measured_fidgets
