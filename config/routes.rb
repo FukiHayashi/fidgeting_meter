@@ -2,10 +2,12 @@ Rails.application.routes.draw do
   namespace :api, format: 'json' do
     namespace :v1 do
       post 'authentication', to: 'authentication#create'
+      resources :measured_fidgets, only: %i[create]
     end
   end
   root 'users#new'
   resources :users, only: %i[new create destroy edit update show]
+  resources :measured_fidgets, only: %i[index]
   get 'login', to: 'authentication#new'
   post 'login', to: 'authentication#create'
   delete 'logout', to: 'authentication#destroy'
