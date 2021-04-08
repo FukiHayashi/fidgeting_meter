@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_31_151031) do
+ActiveRecord::Schema.define(version: 2021_04_08_150951) do
 
   create_table "api_keys", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -28,17 +28,6 @@ ActiveRecord::Schema.define(version: 2021_03_31_151031) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_authentications_on_user_id"
-  end
-
-  create_table "evaluation_fidgets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.float "comprehensive_evaluation"
-    t.float "frustration_level"
-    t.float "fidget_level_maximum"
-    t.datetime "evaluated_at"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_evaluation_fidgets_on_user_id"
   end
 
   create_table "measured_fidgets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -72,7 +61,6 @@ ActiveRecord::Schema.define(version: 2021_03_31_151031) do
 
   add_foreign_key "api_keys", "users"
   add_foreign_key "authentications", "users"
-  add_foreign_key "evaluation_fidgets", "users"
   add_foreign_key "measured_fidgets", "users"
   add_foreign_key "settings", "users"
 end
