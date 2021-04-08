@@ -12,12 +12,12 @@ p Find me in app/views/users/show.html.slim
     p
       = current_user.setting.desktop_application_cooperation
     p
-      = @evaluation_fidgets.get_evaluate_days
+      = @evaluation_fidgets.evaluate_days
     p
-      = @evaluation_fidgets.get_frustration_levels
+      = @evaluation_fidgets.frustration_levels
     p
-      = @evaluation_fidgets.get_fidget_level_maximums
+      = @evaluation_fidgets.fidget_level_maximums
     p
-      = @evaluation_fidgets.get_comprehensive_evaluation
+      = @evaluation_fidgets.comprehensive_evaluation
 
     = link_to "logout", logout_path, method: :delete, class: "btn btn-danger"
