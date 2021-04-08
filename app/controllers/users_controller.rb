@@ -23,7 +23,9 @@ class UsersController < ApplicationController
     redirect_to new_user_path
   end
 
-  def show; end
+  def show
+    @evaluation_fidgets = EvaluationFidgets.new(current_user)
+  end
 
   def edit; end
 
