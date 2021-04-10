@@ -6,7 +6,8 @@ class EvaluationFidgets
     @fidget_times = []
     @fidget_calories = []
     @fidget_level_maximums = []
-    (6.days.ago.to_datetime..Date.today.to_datetime).each do |day|
+
+    (6.days.ago.to_datetime..Time.current).each do |day|
       fidget_levels = user.measured_fidgets.where(detected_at: day.all_day).pluck(:fidget_level)
       measured_times = user.measured_fidgets.where(detected_at: day.all_day).pluck(:measured_time)
       set_evaluate(day, measured_times, fidget_levels)

@@ -33,5 +33,7 @@ module FidgetingMeter
     config.generators.system_tests = nil
 
     config.generators.template_engine = :slim
+
+    config.time_zone = 'Tokyo'
   end
 end
