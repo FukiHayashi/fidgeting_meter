@@ -16,7 +16,8 @@ RSpec.describe 'Users', type: :system do
         fill_in 'Password confirmation', with: password
         click_on 'registration'
 
-        expect(page).to have_content valid_user.name
+        expect(User.find_by(name: valid_user.name).email).to eq valid_user.email
+        expect(current_path).to eq login_path
       end
     end
 
@@ -56,7 +57,10 @@ RSpec.describe 'Users', type: :system do
   end
 
   describe 'ユーザ編集' do
-    before { visit edit_user_path(user) }
+    before do
+      login(user.email, password)
+      visit edit_user_path(user)
+    end
     context '有効な情報が入力された場合' do
       it 'ユーザ情報が更新されること' do
         name = 'changed'
@@ -113,11 +117,14 @@ RSpec.describe 'Users', type: :system do
 
   describe 'ユーザ削除' do
     context 'ユーザを削除した時' do
-      before { visit edit_user_path(user) }
+      before do
+        login(user.email, password)
+        visit edit_user_path(user)
+      end
       it 'ユーザが削除されること' do
         user_count = User.count
         click_on 'delete'
-        expect(User.count).to be < user_count 
+        expect(User.count).to be < user_count
       end
     end
   end
