@@ -6,7 +6,8 @@ Rails.application.routes.draw do
     end
   end
   root 'users#new'
-  resources :users, only: %i[new create destroy edit update show]
+  resources :users, only: %i[new create destroy]
+  resource :profile, only: %i[show edit update]
   resources :measured_fidgets, only: %i[index]
   get 'login', to: 'authentication#new'
   post 'login', to: 'authentication#create'

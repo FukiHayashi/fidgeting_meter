@@ -23,31 +23,9 @@ class UsersController < ApplicationController
     redirect_to new_user_path
   end
 
-  def show
-    @evaluation_fidgets = EvaluationFidgets.new(current_user)
-  end
-
-  def edit; end
-
-  def update
-    if @user.update(update_user_params)
-      redirect_to edit_user_path(@user)
-    else
-      render :edit
-    end
-  end
-
   private
 
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
-  end
-
-  def update_user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation, setting_attributes: %i[push_notification desktop_application_cooperation])
-  end
-
-  def set_user
-    @user = User.find(params[:id])
   end
 end

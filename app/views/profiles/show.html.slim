@@ -4,13 +4,13 @@ p Find me in app/views/users/show.html.slim
 .row
   .col-md-10.offset-md-1.col-lg-8.offset-lg-2
     p
-      = current_user.name
+      = @user.name
     p
-      = current_user.email
+      = @user.email
     p
-      = current_user.setting.push_notification
+      = @user.setting.push_notification
     p
-      = current_user.setting.desktop_application_cooperation
+      = @user.setting.desktop_application_cooperation
     p
       = @evaluation_fidgets.evaluate_days
     p
