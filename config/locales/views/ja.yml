@@ -1,0 +1,7 @@
+ja:
+  defaults:
+    login: 'ログイン'
+    register: '登録'
+    logout: 'ログアウト'
+    delete: '削除'
+    update: '更新'

@@ -1,0 +1,15 @@
+ja:
+  activerecord:
+    models:
+      user: 'ユーザ'
+      measured_fidget: '貧乏ゆすり計測値'
+      setting: '設定'
+    attributes:
+      user:
+        email: 'メールアドレス'
+        password: 'パスワード'
+        password_confirmation: 'パスワード確認'
+        name: '名前'
+      setting:
+        push_notification: 'プッシュ通知'
+        desktop_application_cooperation: 'デスクトップアプリ連携'
