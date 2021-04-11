@@ -67,3 +67,7 @@ gem 'slim-rails'
 
 # json sirialiser
 gem 'fast_jsonapi'
+
+# use bootstrap
+gem 'bootstrap'
+gem 'jquery-rails'
