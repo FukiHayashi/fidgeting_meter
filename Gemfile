@@ -71,3 +71,6 @@ gem 'fast_jsonapi'
 # use bootstrap
 gem 'bootstrap'
 gem 'jquery-rails'
+
+# use i18n
+gem 'rails-i18n'
