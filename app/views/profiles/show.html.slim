@@ -1,6 +1,3 @@
-h1 Users#show
-p Find me in app/views/users/show.html.slim
-
 .row
   .col-md-10.offset-md-1.col-lg-8.offset-lg-2
     p
@@ -11,15 +8,15 @@ p Find me in app/views/users/show.html.slim
       = @user.setting.push_notification
     p
       = @user.setting.desktop_application_cooperation
-    p
-      = @evaluation_fidgets.evaluate_days
-    p
-      = @evaluation_fidgets.fidget_times
-    p
-      = @evaluation_fidgets.fidget_level_maximums
-    p
-      = @evaluation_fidgets.fidget_calories
-    p
-      = @evaluation_fidgets.comprehensive_evaluation
+
+    svg#js_today_score_chart
+    = hidden_field_tag :js_evaluation_fidgets, @evaluation_fidgets
+
+    svg#js_weekly_fidget_times_char
+    svg#js_weekly_fidget_calories_chart
+    svg#js_weekly_fidget_levels_chart
 
     = link_to t('defaults.logout'), logout_path, method: :delete, class: "btn btn-danger"
+
+= javascript_include_tag 'https://d3js.org/d3.v5.min.js'
+= javascript_include_tag 'chart.js'

@@ -1,7 +1,7 @@
 class ProfilesController < ApplicationController
   before_action :set_user, only: %i[show edit update]
   def show
-    @evaluation_fidgets = EvaluationFidgets.new(@user)
+    @evaluation_fidgets = EvaluationFidgets.new(@user).to_json.html_safe
   end
 
   def edit; end
