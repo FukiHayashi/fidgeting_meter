@@ -10,6 +10,7 @@ ja:
     header:
       title: '自震計'
       menu: 'メニュー'
+      home: 'ホーム'
+      measured_fidgets: '自震情報'
   profiles:
     show:
-      measured_fidgets: '自震情報'
