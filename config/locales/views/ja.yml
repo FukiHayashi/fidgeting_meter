@@ -5,3 +5,11 @@ ja:
     logout: 'ログアウト'
     delete: '削除'
     update: '更新'
+    setting: '設定'
+  shared:
+    header:
+      title: '自震計'
+      menu: 'メニュー'
+  profiles:
+    show:
+      measured_fidgets: '自震情報'

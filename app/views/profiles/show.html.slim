@@ -1,16 +1,15 @@
+= render 'shared/header'
 .row
   .col-md-10.offset-md-1.col-lg-8.offset-lg-2
     = hidden_field_tag :js_evaluation_fidgets, @evaluation_fidgets
-    div
-      svg#js_today_score_chart
     div
       svg#js_weekly_fidget_times_chart
     div
       svg#js_weekly_fidget_calories_chart
     div
       svg#js_weekly_fidget_levels_chart
-
-    = link_to t('defaults.logout'), logout_path, method: :delete, class: "btn btn-danger"
+    div
+      = link_to t('profiles.show.measured_fidgets'), measured_fidgets_path, class: "btn btn-secondary"
 
 = javascript_include_tag 'https://d3js.org/d3.v5.min.js'
 = javascript_include_tag 'c3.min.js'
