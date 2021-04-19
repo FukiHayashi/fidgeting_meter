@@ -9,7 +9,7 @@ RSpec.describe 'Authentications', type: :system do
       it 'ログインできること' do
         login(user.email, password)
 
-        expect(current_path).to eq user_path(user)
+        expect(current_path).to eq profile_path
       end
     end
     context 'ログイン情報が登録情報と一致しない時' do
