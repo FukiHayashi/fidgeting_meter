@@ -7,16 +7,14 @@ header.header
         span.navbar-toggler-icon
       .collapse.navbar-collapse id="navbarNavAltMarkup"
         .navbar-nav
-          a.nav-link.active aria-current="page" href="#"
+          a.nav-link.active.home_link aria-current="page" href="#"
             = t('shared.header.home')
-          = link_to t('shared.header.measured_fidgets'), measured_fidgets_path, class: "nav-link"
-      ul.navbar-nav.ml-auto
-        li.nav-item
-          .dropdown
-            button.btn.dropdown-toggle type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false"
+          = link_to t('shared.header.measured_fidgets'), measured_fidgets_path, class: "nav-link measured_fidgets_link"
+          .nav-item.dropdown
+            a.nav-link.dropdown-toggle href="#" role="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false"
               = t('shared.header.menu')
-            ul.dropdown-menu aria-labelledby="dropdownMenuButton"
+            ul.dropdown-menu aria-labelledby="navbarDropdown"
               li
-                = link_to t('defaults.setting'), edit_profile_path, class: "dropdown-item"
+                = link_to t('defaults.setting'), edit_profile_path, class: "dropdown-item edit_profile_link"
               li
-                = link_to t('defaults.logout'), logout_path, method: :delete, class: "dropdown-item"
+                = link_to t('defaults.logout'), logout_path, method: :delete, class: "dropdown-item logout_link"

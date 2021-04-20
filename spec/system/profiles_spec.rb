@@ -4,12 +4,73 @@ RSpec.describe 'Profiles', type: :system do
   let!(:password) { 'password' }
   let!(:user) { create(:user, password: password, password_confirmation: password) }
   let!(:setting) { create(:setting, user: user) }
+  before { login(user.email, password) }
 
-  describe 'ユーザ編集' do
-    before do
-      login(user.email, password)
-      visit edit_profile_path
+  describe 'プロフィールページ' do
+    let!(:measured_fidgets) { create_list(:measured_fidget, 10, user: user) }
+    before { visit profile_path }
+
+    context '自震情報をクリックした時' do
+      it '一覧(measured_fidgets#show)ページに遷移すること' do
+        find('.measured_fidgets_link').click
+        expect(current_path).to eq measured_fidgets_path
+      end
     end
+
+    context 'ログアウトをクリックした時' do
+      it 'ログインページに遷移すること' do
+        find('#dropdownMenuButton').click
+        find('.logout_link').click
+        expect(current_path).to eq login_path
+      end
+    end
+
+    context '設定をクリックした時' do
+      it '設定(profile#edit)ページに遷移すること' do
+        find('#dropdownMenuButton').click
+        find('.edit_profile_link').click
+        expect(current_path).to eq edit_profile_path
+      end
+    end
+
+    context '１週間内で自震情報がある時' do
+      before { @ef = EvaluationFidgets.new(user) }
+      it 'グラフに累計時間が表示されること' do
+        within('#js_weekly_fidget_times_chart') do
+          expect(page).to have_content '累計時間'
+          cnt = 0
+          all('tspan').each do |tspan|
+            cnt = cnt + 1 if tspan.text.to_f == @ef.fidget_times.last
+          end
+          expect(cnt).to eq 1
+        end
+      end
+      it 'グラフにカロリーが表示されること' do
+        within('#js_weekly_fidget_calories_chart') do
+          expect(page).to have_content 'カロリー'
+          cnt = 0
+          all('tspan').each do |tspan|
+            cnt = cnt + 1 if tspan.text.to_f == @ef.fidget_calories.last.round
+          end
+          expect(cnt).to eq 1
+        end
+      end
+      it 'グラフに最大自震度が表示されること' do
+        within('#js_weekly_fidget_levels_chart') do
+          expect(page).to have_content '最大自震度'
+          cnt = 0
+          all('tspan').each do |tspan|
+            cnt = cnt + 1 if tspan.text.to_f == @ef.fidget_level_maximums.last
+          end
+          expect(cnt).to eq 1
+        end
+      end
+    end
+  end
+
+  describe 'ユーザ情報編集' do
+    before { visit edit_profile_path }
+
     context '有効な情報が入力された場合' do
       it 'ユーザ情報が更新されること' do
         name = 'changed'
@@ -68,12 +129,10 @@ RSpec.describe 'Profiles', type: :system do
     end
   end
 
-  describe 'ユーザ削除' do
+  describe 'ユーザ情報削除' do
+
     context 'ユーザを削除した時' do
-      before do
-        login(user.email, password)
-        visit edit_profile_path
-      end
+      before { visit edit_profile_path }
       it 'ユーザが削除されること' do
         user_count = User.count
         click_on I18n.t('defaults.delete')
