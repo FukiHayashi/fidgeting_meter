@@ -8,7 +8,7 @@ class AuthenticationController < ApplicationController
   def create
     @user = login(params[:email], params[:password])
     if @user
-      redirect_to user_path(@user)
+      redirect_to profile_path
     else
       redirect_to login_path
     end
@@ -16,6 +16,6 @@ class AuthenticationController < ApplicationController
 
   def destroy
     logout
-    redirect_to new_user_path
+    redirect_to login_path
   end
 end

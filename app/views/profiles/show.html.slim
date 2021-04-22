@@ -1,0 +1,13 @@
+= render 'shared/header'
+.d-grid.gap-3.ms-3
+  = hidden_field_tag :js_evaluation_fidgets, @evaluation_fidgets
+  .card.p-2
+    svg.card-img-top#js_weekly_fidget_times_chart
+  .card.p-2
+    svg.card-img-top#js_weekly_fidget_calories_chart
+  .card.p-2
+    svg.card-img-top#js_weekly_fidget_levels_chart
+
+= javascript_include_tag 'https://d3js.org/d3.v5.min.js'
+= javascript_include_tag 'c3.min.js'
+= javascript_include_tag 'chart.js'

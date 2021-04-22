@@ -67,3 +67,10 @@ gem 'slim-rails'
 
 # json sirialiser
 gem 'fast_jsonapi'
+
+# use bootstrap
+gem 'bootstrap', '~> 5.0.0.beta2'
+gem 'jquery-rails'
+
+# use i18n
+gem 'rails-i18n'
