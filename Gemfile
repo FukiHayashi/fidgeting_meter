@@ -74,3 +74,6 @@ gem 'jquery-rails'
 
 # use i18n
 gem 'rails-i18n'
+
+# use kaminari to paginate
+gem 'kaminari'
