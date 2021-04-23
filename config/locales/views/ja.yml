@@ -28,3 +28,10 @@ ja:
       detected_at: '検知日時'
       fidget_level: '自震度'
       measured_time: '揺れ時間'
+  views:
+    pagination:
+      first: "&laquo;"
+      last: "&raquo;"
+      previous: "&lsaquo;"
+      next: "&rsaquo;"
+      truncate: "..."

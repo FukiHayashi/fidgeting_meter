@@ -7,3 +7,5 @@
         th = t ".measured_time"
     tbody
       = render 'measured_fidgets', measured_fidgets: @measured_fidgets
+.measured_fidgets_paginate
+  = paginate @measured_fidgets
