@@ -1,4 +1,4 @@
-window.onload = function() {
+window.addEventListener('load', function() {
   let arr_evaluation_fidgets = document.getElementById("js_evaluation_fidgets").value
   var evaluation_fidgets = JSON.parse(arr_evaluation_fidgets)
   evaluation_fidgets["dayofweek"] = dayofweek(evaluation_fidgets.evaluate_days)
@@ -6,7 +6,7 @@ window.onload = function() {
   js_weekly_fidget_times_chart(evaluation_fidgets)
   js_weekly_fidget_calories_chart(evaluation_fidgets)
   js_weekly_fidget_levels_chart(evaluation_fidgets)
-}
+})
 
 function dayofweek(days){
   var dayofweek = ["x"]

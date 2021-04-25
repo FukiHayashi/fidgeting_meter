@@ -6,6 +6,7 @@ ja:
     delete: '削除'
     update: '更新'
     setting: '設定'
+    back: '戻る'
   shared:
     header:
       title: '自震計'
@@ -14,3 +15,23 @@ ja:
       measured_fidgets: '自震情報'
   profiles:
     show:
+    edit:
+      delete: 'アカウント削除'
+      back: '戻る'
+  authentication:
+    new:
+    form:
+      email: 'メールアドレス'
+      password: 'パスワード'
+  measured_fidgets:
+    index:
+      detected_at: '検知日時'
+      fidget_level: '自震度'
+      measured_time: '揺れ時間'
+  views:
+    pagination:
+      first: "&laquo;"
+      last: "&raquo;"
+      previous: "&lsaquo;"
+      next: "&rsaquo;"
+      truncate: "..."
