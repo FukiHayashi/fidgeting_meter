@@ -16,6 +16,13 @@ RSpec.describe 'MeasuredFidgets', type: :system do
 
         expect(page.all(".measured_fidget").count).to eq measured_fidgets.count
       end
+      it 'ページネーションが設定されていること' do
+        add_list = create_list(:measured_fidget, 10, user: user)
+        visit measured_fidgets_path
+        expect(page.all(".measured_fidget").count).to eq measured_fidgets.count
+        click_link "2"
+        expect(page.all(".measured_fidget").count).to eq add_list.count
+      end
     end
 
     context 'ログインしていないユーザの場合' do

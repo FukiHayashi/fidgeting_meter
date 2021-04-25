@@ -14,7 +14,7 @@ RSpec.describe 'Users', type: :system do
         fill_in I18n.t('activerecord.attributes.user.email'), with: valid_user.email
         fill_in I18n.t('activerecord.attributes.user.password'), with: password
         fill_in I18n.t('activerecord.attributes.user.password_confirmation'), with: password
-        click_on I18n.t('defaults.register')
+        find_button(I18n.t('defaults.register')).click
 
         expect(User.find_by(name: valid_user.name).email).to eq valid_user.email
         expect(current_path).to eq login_path
@@ -28,7 +28,7 @@ RSpec.describe 'Users', type: :system do
         fill_in I18n.t('activerecord.attributes.user.email'), with: invalid_user.email
         fill_in I18n.t('activerecord.attributes.user.password'), with: nil
         fill_in I18n.t('activerecord.attributes.user.password_confirmation'), with: nil
-        click_on I18n.t('defaults.register')
+        find_button(I18n.t('defaults.register')).click
 
         invalid_user.valid?
         expect(invalid_user.errors.full_messages.count).to be > 0
@@ -45,7 +45,7 @@ RSpec.describe 'Users', type: :system do
         fill_in I18n.t('activerecord.attributes.user.email'), with: invalid_user.email
         fill_in I18n.t('activerecord.attributes.user.password'), with: password
         fill_in I18n.t('activerecord.attributes.user.password_confirmation'), with: password
-        click_on I18n.t('defaults.register')
+        find_button(I18n.t('defaults.register')).click
 
         invalid_user.valid?
         expect(invalid_user.errors.full_messages.count).to be > 0
